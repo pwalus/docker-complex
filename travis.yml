@@ -12,4 +12,7 @@ after_success:
   - docker build -t pwalus/docker-complex-server ./server
   - docker build -t pwalus/docker-complex-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_LOGIN" --password-stdin
-  - docker push
+  - docker push pwalus/docker-complex-client
+  - docker push pwalus/docker-complex-nginx
+  - docker push pwalus/docker-complex-server
+  - docker push pwalus/docker-complex-worker
